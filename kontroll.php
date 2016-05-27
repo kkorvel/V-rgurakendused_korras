@@ -7,11 +7,11 @@ function kontroller_add($Sihtkoht, $Lähtekoht, $Kuupäev, $Lennualgus, $Lennul�
         return false;
     }
     if ($Sihtkoht== '' || $Lähtekoht == '' || $Vabadkohad <= 0) {
-        message_add('Vigased sisendandmed');
+        message_add(' Sisendandmed on vigased!');
         return false;
     }
-    if (kontroller_add($Sihtkoht, $Lähtekoht, $Kuupäev, $Lennualgus, $Lennulõpp, $Vabadkohad)) {
-        message_add('Lisati uus rida');
+    if (model_add($Sihtkoht, $Lähtekoht, $Kuupäev, $Lennualgus, $Lennulõpp, $Vabadkohad)) {
+        message_add(' Lisati uus rida!');
         return true;
     }
     message_add('Andmete lisamine ebaõnnestus');
@@ -34,7 +34,24 @@ function kontroller_delete($id)
     message_add('Rea kustutamine ebaõnnestus');
     return false;
 }
-
+// Uuendab kirje väärtust
+function kontroller_update($id, $Sihtkoht, $Lähtekoht, $Kuupäev, $Lennualgus, $Lennulõpp, $Vabadkohad)
+{
+    if (!kontroller_user()) {
+        message_add('Tegevus eeldab sisselogimist');
+        return false;
+    }
+    if ($id <= 0 || $Vabadkohad <= 0) {
+        message_add('Vigased sisendandmed');
+        return false;
+    }
+    if (model_update($Sihtkoht, $Lähtekoht, $Kuupäev, $Lennualgus, $Lennulõpp, $Vabadkohad)) {
+        message_add('Uuendati andmeid real '.$id);
+        return true;
+    }
+    message_add('Andmete uuendamine ebaõnnestus');
+    return false;
+}
 // Kontrollib kas kasutaja on sisse logitud
 function kontroller_user()
 {
