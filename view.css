@@ -1,0 +1,52 @@
+body {
+  background-image: url("beautiful.jpg");
+  background-position: left;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+h2 {
+  font-size: 200%
+}
+th, td {
+    padding: 8px;
+}
+th {
+  background-color: #4169E1;
+}
+td {
+  background-color: #87CEFA;
+}
+#p{
+  color: black;
+  background-color: rgb(52, 176, 198);
+  font-size: 170%;
+  font-weight: bolder;
+}
+#loginsisu{
+  background-image: url("sky.jpg");
+  background-position: left;;
+}
+#rega{
+  background-image: url("sky2.jpg");
+  background-position: left;
+}
+.nupp{
+  background-color: gray;
+      border: none;
+      color: black;
+      padding: 15px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+}
+.teade{
+  color:black;
+  font-size: 130%;
+
+}
